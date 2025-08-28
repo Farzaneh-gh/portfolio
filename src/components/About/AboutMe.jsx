@@ -3,7 +3,11 @@ import Frazaneh2 from "../../assets/images/Frazaneh2.jpg";
 
 function AboutMe() {
   return (
-    <section className="pt-8 pb-16 md:pt-25 md:pb-8" id="about">
+    <section
+      className="pt-8 pb-16 md:pt-25 md:pb-8"
+      id="about"
+      data-aos="fade-up"
+    >
       <h2 className="text-center text-4xl text-zinc-800 font-medium mb-3">
         About me
       </h2>
@@ -37,7 +41,10 @@ function AboutMe() {
         <h2 className="text-xl font-semibold text-zinc-900 pl-6 lg:hidden self-center">
           EDUCATION
         </h2>
-        <div className="flex flex-col md:flex-row gap-4 w-full items-center md:items-stretch md:col-span-2 lg:col-span-1 justify-between ">
+        <div
+          data-aos="flip-left"
+          className="flex flex-col md:flex-row gap-4 w-full items-center md:items-stretch md:col-span-2 lg:col-span-1 justify-between "
+        >
           <div className="py-5 px-5 rounded-xl w-[90%] shadow-md bg-[#9a8cdc] text-white text-center flex flex-col justify-between items-center">
             <span className="block  font-semibold text-zinc-900 line-clamp-2 text-xs md:text-base ">
               MigraCode Barcelona
@@ -50,7 +57,10 @@ function AboutMe() {
             <span className="block text-xs mt-1">Barcelona, Spain</span>
           </div>
 
-          <div className="py-5 px-5 rounded-xl w-[90%] shadow-md bg-[#9a8cdc] text-white text-center flex flex-col justify-between items-center">
+          <div
+            data-aos="flip-left"
+            className="py-5 px-5 rounded-xl w-[90%] shadow-md bg-[#9a8cdc] text-white text-center flex flex-col justify-between items-center"
+          >
             <span className="block  font-semibold text-zinc-900 line-clamp-2 text-xs md:text-base ">
               Shiraz University of Medical Sciences
             </span>
@@ -61,7 +71,10 @@ function AboutMe() {
             <span className="block text-xs mt-1"> Iran</span>
           </div>
 
-          <div className="py-5 px-5 rounded-xl w-[90%] shadow-md  bg-gradient-to-r from-[#b7aef0] to-[#7f6cc9] text-white text-center flex flex-col justify-between items-center">
+          <div
+            data-aos="flip-left"
+            className="py-5 px-5 rounded-xl w-[90%] shadow-md  bg-gradient-to-r from-[#b7aef0] to-[#7f6cc9] text-white text-center flex flex-col justify-between items-center"
+          >
             <span className="block font-semibold text-zinc-900 text-xs md:text-base ">
               University of Science and Technology
             </span>
@@ -92,7 +105,7 @@ function AboutMe() {
         >
           <a
             download="Farzaneh-Ghasemi-CV.pdf"
-          /*   href="/assets/pdf/CV-Farzaneh-Ghasemii.pdf" */
+            /*   href="/assets/pdf/CV-Farzaneh-Ghasemii.pdf" */
             className="flex gap-3 items-center"
           >
             <span className="text-sm md:text-base">Download CV</span>

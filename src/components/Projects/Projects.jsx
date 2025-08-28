@@ -2,7 +2,7 @@ import React from "react";
 
 function Projects() {
   return (
-    <section id="projects" className="relative pt-20 overflow-hidden">
+    <section id="projects" className="relative pt-20 overflow-hidden" data-aos="fade-up">
       <div className="max-w-6xl mx-auto px-6">
         <div className="space-y-20">
           <div className=" text-center space-y-4">
@@ -118,10 +118,9 @@ function Projects() {
                     "Bcrypt.js",
                     "JSON Web Token",
                     "Twilio",
-             
-
                   ].map((tech, index) => (
                     <span
+                      data-aos-delay={index * 100}
                       key={index}
                       className="px-4 py-2 text-xs rounded-full border border-gray-300 bg-zinc-50 text-zinc-700"
                     >

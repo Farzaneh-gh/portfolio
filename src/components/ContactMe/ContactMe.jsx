@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-10 px-4 lg:px-0 overflow-hidden">
+    <section id="contact" className="py-10 px-4 lg:px-0 overflow-hidden" data-aos="fade-up">
       {/* Title + Subtitle */}
       <div className="text-center mb-12 md:mb-20">
         <h2 className=" text-2xl md:text-4xl font-bold text-zinc-800 md:mb-4">

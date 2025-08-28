@@ -3,7 +3,11 @@ import linkedin from "../../assets/linkedin.png";
 import Farzaneh from "../../assets/images/Farzaneh.png";
 function Header() {
   return (
-    <section id="home" className=" py-24 pb-8 px-0 mx-auto md:px-5">
+    <section
+      id="home"
+      className=" py-24 pb-8 px-0 mx-auto md:px-5"
+      data-aos="fade-up"
+    >
       <div className="max-w-5xl mx-auto pt-22 px-4 md:px-10 lg:px-10">
         <div className="grid xxs:grid-cols-[max-content_1fr] xs:grid-cols-[max-content_1fr_1fr]  gap-6 md:gap-8 ">
           <div className="flex flex-col my-auto gap-y-6 md:-translate-x-10 ">
@@ -50,7 +54,7 @@ function Header() {
             </a>
           </div>
 
-          <div className="order-2 xs:order-none flex-center">
+          <div className="order-2 xs:order-none flex-center" data-aos="zoom-in">
             <svg
               className="w-[200px] md:w-[270px] lg:w-[320px] fill-blue-700"
               viewBox="0 0 200 187"

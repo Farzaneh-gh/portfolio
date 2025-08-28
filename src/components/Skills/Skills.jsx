@@ -7,7 +7,7 @@ function Skills() {
     setOpenSkill(openSkill === index ? null : index);
   }
   return (
-    <section className="pt-8 pb-16 md:pt-25 md:pb-8" id="skills">
+    <section className="pt-8 pb-16 md:pt-25 md:pb-8" id="skills" data-aos="fade-up">
       {" "}
       <h2 className="text-center text-4xl text-zinc-800 font-medium mb-3">
         Skills

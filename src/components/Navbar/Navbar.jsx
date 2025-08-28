@@ -16,7 +16,7 @@ function Navbar() {
          }
        });
      },
-     { threshold: 0.6 } 
+     { threshold: 0.2 } 
    );
 
    sections.forEach((sec) => observer.observe(sec));
