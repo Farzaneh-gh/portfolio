@@ -1,14 +1,23 @@
 import { useForm } from "react-hook-form";
+import swal from "sweetalert";
+
 
 export default function ContactSection() {
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
+     swal({
+       title: "Message Sent!",
+       text: "Thank you for contacting me. I will get back to you soon.",
+       icon: "success",
+       button: "OK",
+     });
+    reset();
   };
 
   return (
@@ -95,8 +104,8 @@ export default function ContactSection() {
               },
             },
           ].map(({ id, label, type, validation }) => (
-            <>
-              <div key={id} className="rounded-lg bg-zinc-200 px-4 pt-3 pb-1">
+            <div key={id}>
+              <div className="rounded-lg bg-zinc-200 px-4 pt-3 pb-1">
                 <label
                   htmlFor={id}
                   className="block text-sm font-medium text-gray-700"
@@ -104,6 +113,7 @@ export default function ContactSection() {
                   {label}
                 </label>
                 <input
+                key={id}
                   type={type}
                   id={id}
                   {...register(id, validation)}
@@ -112,11 +122,11 @@ export default function ContactSection() {
               </div>
               {/* Show validation error */}
               {errors[id] && (
-                <span className="text-xs text-red-500">
+                <span className="text-xs text-red-500" >
                   {errors[id].message}
                 </span>
               )}
-            </>
+            </div>
           ))}
 
           <div className="rounded-lg bg-zinc-200 px-4 pt-3 pb-1">

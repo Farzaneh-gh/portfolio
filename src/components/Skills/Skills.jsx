@@ -48,7 +48,7 @@ function Skills() {
 
         <div>
           <div className="flex flex-row gap-x-2 md:gap-6 cursor-pointer items-center  justify-center  ">
-            <i class="uil uil-server-network  text-2xl md:text-4xl text-purple-600"></i>
+            <i className="uil uil-server-network  text-2xl md:text-4xl text-purple-600"></i>
             <span className=" text-base  md:text-2xl font-bold text-zinc-900">
               Backend developer
             </span>
@@ -73,7 +73,7 @@ function Skills() {
         </div>
         <div>
           <div className="flex flex-row gap-6 cursor-pointer items-center  justify-center  ">
-            <i class="uil uil-server-network  text-2xl md:text-4xl text-purple-600"></i>
+            <i className="uil uil-server-network  text-2xl md:text-4xl text-purple-600"></i>
             <span className=" text-base md:text-2xl font-bold text-zinc-900">
               Methodologies
             </span>
