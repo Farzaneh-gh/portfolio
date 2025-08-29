@@ -68,24 +68,30 @@ function Header() {
 
           <div className="text-left xs:order-2 col-span-3 xs:col-span-1 md:w-[90%]">
             <h1 className=" text-2xl lg:text-[2.5rem] text-gray-800 font-medium mb-3">
-              <Typewriter
-                words={["Hi, I am Farzaneh"]}
-                loop={1}
-                cursorStyle="|"
-                typeSpeed={100}
-              />
+              Hi, I am Farzaneh
             </h1>
             <h3 className="text-4.5 md:text-2xl text-gray-600 mb-3 font-medium">
               <Typewriter
-                words={[" Frontend developer"]}
-                loop={1}
+                words={[
+                  "Frontend Developer",
+                  "React Enthusiast",
+                  "UI/UX Lover",
+                  "Problem Solver",
+                  "Team Player",
+                  "Lifelong Learner",
+                ]}
+                loop={0} // infinite loop
+                cursor
+                cursorStyle="|"
                 typeSpeed={100}
+                deleteSpeed={50}
+                delaySpeed={1500}
               />
             </h3>
 
             <p className="text-base md:text-lg text-blue-700  mb-5 ">
-              High level experience in web design and development knowledge,
-              producing quality work.
+              I build responsive, interactive web apps with React, turning ideas
+              into user-friendly digital experiences.
             </p>
             <a
               href="#contact"
