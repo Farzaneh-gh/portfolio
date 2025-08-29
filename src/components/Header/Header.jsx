@@ -1,4 +1,5 @@
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 import linkedin from "../../assets/linkedin.png";
 import Farzaneh from "../../assets/images/Farzaneh.png";
 function Header() {
@@ -67,12 +68,22 @@ function Header() {
 
           <div className="text-left xs:order-2 col-span-3 xs:col-span-1 md:w-[90%]">
             <h1 className=" text-2xl lg:text-[2.5rem] text-gray-800 font-medium mb-3">
-              Hi, I am Farzaneh
+              <Typewriter
+                words={["Hi, I am Farzaneh"]}
+                loop={1}
+                cursorStyle="|"
+                typeSpeed={100}
+              />
             </h1>
             <h3 className="text-4.5 md:text-2xl text-gray-600 mb-3 font-medium">
-              Frontend developer
+              <Typewriter
+                words={[" Frontend developer"]}
+                loop={1}
+                typeSpeed={100}
+              />
             </h3>
-            <p className="text-base md;text-lg text-blue-700  mb-5 ">
+
+            <p className="text-base md:text-lg text-blue-700  mb-5 ">
               High level experience in web design and development knowledge,
               producing quality work.
             </p>
