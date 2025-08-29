@@ -9,7 +9,7 @@ function Header() {
       data-aos="fade-up"
     >
       <div className="max-w-5xl mx-auto pt-22 px-4 md:px-10 lg:px-10">
-        <div className="grid xxs:grid-cols-[max-content_1fr] xs:grid-cols-[max-content_1fr_1fr]  gap-6 md:gap-8 ">
+        <div className="grid grid-cols-[max-content_1fr] xs:grid-cols-[max-content_1fr_1fr]  gap-6 md:gap-8 ">
           <div className="flex flex-col my-auto gap-y-6 md:-translate-x-10 ">
             <a
               href="https://linkedin.com/in/farzaneh-ghasemi-8b6b36247/"
@@ -29,32 +29,11 @@ function Header() {
               </svg>
             </a>
           </div>
-          <div className="text-left order-3 xs:order-none col-span-3 xs:col-span-1 md:w-[90%]">
-            <h1 className=" text-2xl lg:text-[2.5rem] text-gray-800 font-medium mb-3">
-              Hi, I am Farzaneh
-            </h1>
-            <h3 className="text-4.5 md:text-2xl text-gray-600 mb-3 font-medium">
-              Frontend developer
-            </h3>
-            <p className="text-base md;text-lg text-blue-700  mb-5 ">
-              High level experience in web design and development knowledge,
-              producing quality work.
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2  rounded-lg font-semibold shadow-md   transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2  bg-gradient-to-r from-blue-700 to-blue-500 text-white     hover:from-[#a699e8] hover:to-[#6d5abf] dark:from-[#8d7cd8] dark:to-[#5b47a9] px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base mx-auto  "
-            >
-              <span>Contact Me</span>
-              <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
-                aria-hidden="true"
-              >
-                <use href="#icon-send" />
-              </svg>
-            </a>
-          </div>
 
-          <div className="order-2 xs:order-none flex-center" data-aos="zoom-in">
+          <div
+            className=" xs:col-span-1 xs:order-3 flex-center"
+            data-aos="zoom-in"
+          >
             <svg
               className="w-[200px] md:w-[270px] lg:w-[320px] fill-blue-700"
               viewBox="0 0 200 187"
@@ -84,6 +63,31 @@ function Header() {
                 ></image>
               </g>
             </svg>
+          </div>
+
+          <div className="text-left xs:order-2 col-span-3 xs:col-span-1 md:w-[90%]">
+            <h1 className=" text-2xl lg:text-[2.5rem] text-gray-800 font-medium mb-3">
+              Hi, I am Farzaneh
+            </h1>
+            <h3 className="text-4.5 md:text-2xl text-gray-600 mb-3 font-medium">
+              Frontend developer
+            </h3>
+            <p className="text-base md;text-lg text-blue-700  mb-5 ">
+              High level experience in web design and development knowledge,
+              producing quality work.
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2  rounded-lg font-semibold shadow-md   transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2  bg-gradient-to-r from-blue-700 to-blue-500 text-white     hover:from-[#a699e8] hover:to-[#6d5abf] dark:from-[#8d7cd8] dark:to-[#5b47a9] px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base mx-auto  "
+            >
+              <span>Contact Me</span>
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                aria-hidden="true"
+              >
+                <use href="#icon-send" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
