@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Frazaneh2 from "../../assets/images/Frazaneh2.jpg";
 
 function AboutMe() {
+  const { t } = useTranslation();
+
   return (
     <section
       className="pt-8 pb-16 md:pt-25 md:pb-8"
@@ -9,37 +12,33 @@ function AboutMe() {
       data-aos="fade-up"
     >
       <h2 className="text-center text-4xl text-zinc-800 font-medium mb-3">
-        About me
+        {t("aboutTitle")}
       </h2>
       <span className="text-center mb-16 block text-base text-zinc-600">
-        My Introduction
+        {t("aboutSubtitle")}
       </span>
 
       <div className="max-w-7xl flex flex-col gap-y-5 mx-auto md:grid md:grid-cols-2 md:grid-rows-[auto auto]  gap-5 lg:gap-8 px-6 lg:px-10 items-start">
         {/* Image */}
         <img
           src={Frazaneh2}
-          alt="about me"
+          alt={t("aboutImageAlt")}
           className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] h-auto mx-auto rounded-2xl row-span-1 lg:row-span-2"
         />
 
         {/* Introduction Text */}
         <div>
           <p className="text-sm md:text-base lg:text-lg  text-center lg:text-justify text-zinc-600 mb-3 lg:mb-16 leading-normal tracking-tight">
-            Hi! I’m Farzaneh, a Front-End Developer in Barcelona. I build
-            responsive, user-friendly web applications with React, Next.js,
-            Redux, and Tailwind CSS. With a background in healthcare IT and
-            modern web development, I love turning ideas into seamless,
-            high-performance digital experiences.
+            {t("aboutText")}
           </p>
           <h2 className="text-2xl font-semibold text-zinc-900 pl-6 hidden lg:block ">
-            EDUCATION
+            {t("educationTitle")}
           </h2>
         </div>
 
         {/* Education / Info Cards */}
         <h2 className="text-xl font-semibold text-zinc-900 pl-6 lg:hidden self-center">
-          EDUCATION
+          {t("educationTitle")}
         </h2>
         <div
           data-aos="flip-left"
@@ -47,14 +46,12 @@ function AboutMe() {
         >
           <div className="py-5 px-5 rounded-xl w-[90%] shadow-md bg-[#9a8cdc] text-white text-center flex flex-col justify-between items-center">
             <span className="block  font-semibold text-zinc-900 line-clamp-2 text-xs md:text-base ">
-              MigraCode Barcelona
+              {t("migraCode")}
             </span>
 
-            <span className="block text-sm">Certificate in</span>
-            <span className="font-semibold  block text-sm">
-              Web Development
-            </span>
-            <span className="block text-xs mt-1">Barcelona, Spain</span>
+            <span className="block text-sm">{t("certificateIn")}</span>
+            <span className="font-semibold  block text-sm">{t("webDev")}</span>
+            <span className="block text-xs mt-1">{t("barcelona")}</span>
           </div>
 
           <div
@@ -62,13 +59,13 @@ function AboutMe() {
             className="py-5 px-5 rounded-xl w-[90%] shadow-md bg-[#9a8cdc] text-white text-center flex flex-col justify-between items-center"
           >
             <span className="block  font-semibold text-zinc-900 line-clamp-2 text-xs md:text-base ">
-              Shiraz University of Medical Sciences
+              {t("shirazUni")}
             </span>
             <span className="block text-sm">
               M.Sc.
-              <span className="font-semibold block">Medical Informatics</span>
+              <span className="font-semibold block">{t("medInformatics")}</span>
             </span>
-            <span className="block text-xs mt-1"> Iran</span>
+            <span className="block text-xs mt-1">{t("iran")}</span>
           </div>
 
           <div
@@ -76,13 +73,13 @@ function AboutMe() {
             className="py-5 px-5 rounded-xl w-[90%] shadow-md  bg-gradient-to-r from-[#b7aef0] to-[#7f6cc9] text-white text-center flex flex-col justify-between items-center"
           >
             <span className="block font-semibold text-zinc-900 text-xs md:text-base ">
-              University of Science and Technology
+              {t("ust")}
             </span>
             <span className="block text-sm">
               B.Sc.
-              <span className="font-semibold block">Software Engineering</span>
+              <span className="font-semibold block">{t("softEng")}</span>
             </span>
-            <span className="block text-xs mt-1">Iran</span>
+            <span className="block text-xs mt-1">{t("iran")}</span>
           </div>
         </div>
 
@@ -108,7 +105,7 @@ function AboutMe() {
             /*   href="/assets/pdf/CV-Farzaneh-Ghasemii.pdf" */
             className="flex gap-3 items-center"
           >
-            <span className="text-sm md:text-base">Download CV</span>
+            <span className="text-sm md:text-base">{t("downloadCV")}</span>
             <svg className="w-6 h-6 text-white font-bold">
               <use href="#icon-download"></use>
             </svg>

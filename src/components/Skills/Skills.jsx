@@ -1,101 +1,89 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Skills() {
+  const { t } = useTranslation();
+  const [openSkill, setOpenSkill] = useState(1);
 
-  const [openSkill,setOpenSkill] = React.useState(1);
-  const toggleSkills = (index) =>{
+  const toggleSkills = (index) => {
     setOpenSkill(openSkill === index ? null : index);
-  }
+  };
+
+  const skillGroups = [
+    {
+      id: 1,
+      icon: "uil-brackets-curly",
+      title: t("skillsSection.frontend.title"),
+      skills: [
+        "HTML5",
+        "CSS3",
+        "JavaScript (ES6+)",
+        "React",
+        "React Router DOM",
+        "Redux",
+        "Next.js",
+        "Tailwind",
+      ],
+    },
+    {
+      id: 2,
+      icon: "uil-server-network",
+      title: t("skillsSection.backend.title"),
+      skills: ["Node.js", "Express.js", "REST APIs", "SQL Server", "MongoDB"],
+    },
+    {
+      id: 3,
+      icon: "uil-server-network",
+      title: t("skillsSection.methodologies.title"),
+      skills: ["Git", "Agile (Scrum)"],
+    },
+  ];
+
   return (
-    <section className="pt-8 pb-16 md:pt-25 md:pb-8" id="skills" data-aos="fade-up">
-      {" "}
+    <section
+      className="pt-8 pb-16 md:pt-25 md:pb-8"
+      id="skills"
+      data-aos="fade-up"
+    >
       <h2 className="text-center text-4xl text-zinc-800 font-medium mb-3">
-        Skills
+        {t("skillsSection.title")}
       </h2>
       <span className="text-center mb-20 block text-base text-zinc-600">
-        My technical level
+        {t("skillsSection.subtitle")}
       </span>
+
       <div className="max-w-7xl lg:px-30 mx-auto px-6 md:px-1 grid grid-cols-1 xs:grid-cols-2 gap-6 lg:gap-12 ">
-        <div>
-          <div className="flex flex-row gap-x-2 md:gap-6 cursor-pointer items-center  justify-center  ">
-            <i className="uil uil-brackets-curly text-2xl md:text-4xl text-purple-600"></i>
+        {skillGroups.map((group) => (
+          <div key={group.id}>
+            <div
+              className="flex flex-row gap-x-2 md:gap-6 cursor-pointer items-center justify-center"
+              onClick={() => toggleSkills(group.id)}
+            >
+              <i
+                className={`uil ${group.icon} text-2xl md:text-4xl text-purple-600`}
+              ></i>
+              <span className="text-base md:text-2xl font-bold text-zinc-900">
+                {group.title}
+              </span>
+              <svg className="w-4 h-4 md:w-6 md:h-6 text-blue-800 font-extrabold ml-auto">
+                <use href="#icon-arrowdown"></use>
+              </svg>
+            </div>
 
-            <span className=" text-base  md:text-2xl font-bold text-zinc-900">
-              Frontend developer
-            </span>
-            <svg
-              className=" w-4 h-4 md:w-6 md:h-6 text-blue-800 font-extrabold ml-auto "
-              onClick={() => toggleSkills(1)}
+            <ul
+              className={`bg-white shadow mt-4 md:mt-6 rounded-2xl px-6 py-5 child:text-xs md:child:text-lg child:text-zinc-600 child:mb-2 ${
+                openSkill === group.id ? "block" : "hidden"
+              }`}
             >
-              <use href="#icon-arrowdown"></use>
-            </svg>
+              {group.skills.map((skill, idx) => (
+                <li key={idx}>{skill}</li>
+              ))}
+            </ul>
           </div>
-          <ul
-            className={`bg-white shadow mt-4 md:mt-6 rounded-2xl px-6 py-5 child:text-xs md:child:text-lg child:text-zinc-600 child:mb-2 ${
-              openSkill === 1 ? "block" : "hidden"
-            }`}
-          >
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React</li>
-            <li>React Router DOM</li>
-            <li>Redux</li>
-            <li>Next.js</li>
-            <li>Tailwind</li>
-          </ul>
-        </div>
-
-        <div>
-          <div className="flex flex-row gap-x-2 md:gap-6 cursor-pointer items-center  justify-center  ">
-            <i className="uil uil-server-network  text-2xl md:text-4xl text-purple-600"></i>
-            <span className=" text-base  md:text-2xl font-bold text-zinc-900">
-              Backend developer
-            </span>
-            <svg
-              className=" w-4 h-4 md:w-6 md:h-6 text-blue-800 font-extrabold ml-auto "
-              onClick={() => toggleSkills(2)}
-            >
-              <use href="#icon-arrowdown"></use>
-            </svg>
-          </div>
-          <ul
-            className={`bg-white shadow mt-4 md:mt-6 rounded-2xl px-6 py-5 child:text-xs md:child:text-lg child:text-zinc-600 child:mb-2 ${
-              openSkill === 2 ? "block" : "hidden"
-            }`}
-          >
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>REST APIs</li>
-            <li>SQL Server</li>
-            <li>MongoDB</li>
-          </ul>
-        </div>
-        <div>
-          <div className="flex flex-row gap-6 cursor-pointer items-center  justify-center  ">
-            <i className="uil uil-server-network  text-2xl md:text-4xl text-purple-600"></i>
-            <span className=" text-base md:text-2xl font-bold text-zinc-900">
-              Methodologies
-            </span>
-            <svg
-              className=" w-4 h-4 md:w-6 md:h-6 text-blue-800 font-extrabold ml-auto "
-              onClick={() => toggleSkills(3)}
-            >
-              <use href="#icon-arrowdown"></use>
-            </svg>
-          </div>
-          <ul
-            className={`bg-white shadow mt-4 md:mt-6 rounded-2xl px-6 py-5 child:text-xs md:child:text-lg child:text-zinc-600 child:mb-2 ${
-              openSkill === 3 ? "block" : "hidden"
-            }`}
-          >
-            <li>Git</li>
-            <li>Agile (Scrum)</li>
-          </ul>
-        </div>
+        ))}
       </div>
     </section>
   );
 }
 
-export default Skills
+export default Skills;

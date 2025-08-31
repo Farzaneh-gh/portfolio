@@ -1,31 +1,31 @@
 import React from 'react'
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+    const { t } = useTranslation();
   return (
     <div className="w-full mt-8 pt-8 pb-8 bg-gradient-to-r from-[#9c92da] to-[#7a63d6] overflow-hidden">
       <div className="max-w-6xl mx-auto grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-x-8 items-start justify-between space-y-6 text-white text-sm px-6">
         <div>
           <h1 className="font-bold">Farzaneh</h1>
-          <p className="text-sm text-white mt-1">
-            Crafted with ❤️ and modern web technologies
-          </p>
+          <p className="text-sm text-white mt-1">{t("footer.crafted")}</p>
         </div>
         <ul className="child:mb-4 flex flex-col md:flex-row justify-between items-start self-center md:mt-6">
           <li>
             <a href="#skills" className="footer__link">
-              Skills
+              {t("footer.links.skills")}
             </a>
           </li>
 
           <li>
             <a href="#projects" className="footer__link">
-              Projects
+              {t("footer.links.projects")}
             </a>
           </li>
 
           <li>
             <a href="#contact" className="footer__link">
-              Contact me
+              {t("footer.links.contact")}
             </a>
           </li>
         </ul>

@@ -1,0 +1,112 @@
+{
+  "home": "Inicio",
+  "about": "Sobre mí",
+  "skillsNav": "Habilidades",
+  "projectsNav": "Proyectos",
+  "contactNav": "Contáctame",
+  "languageEnglish": "Inglés",
+  "languageSpanish": "Español",
+  "headerGreeting": "Hola, soy Farzaneh",
+  "headerRoles": [
+    "Desarrolladora Frontend",
+    "Entusiasta de React",
+    "Amante del UI/UX",
+    "Resolutiva de Problemas",
+    "Trabajo en Equipo",
+    "Aprendiz de por Vida"
+  ],
+  "headerDescription": "Creo aplicaciones web interactivas y responsivas con React, transformando ideas en experiencias digitales amigables.",
+  "headerContact": "Contáctame",
+  "aboutTitle": "Sobre mí",
+  "aboutSubtitle": "Mi introducción",
+  "aboutImageAlt": "Imagen sobre mí",
+  "aboutText": "¡Hola! Soy Farzaneh, desarrolladora Front-End en Barcelona. Construyo aplicaciones web receptivas y fáciles de usar con React, Next.js, Redux y Tailwind CSS. Con experiencia en TI sanitaria y desarrollo web moderno, me encanta convertir ideas en experiencias digitales fluidas y de alto rendimiento.",
+  "educationTitle": "EDUCACIÓN",
+  "migraCode": "MigraCode Barcelona",
+  "certificateIn": "Certificado en",
+  "webDev": "Desarrollo Web",
+  "barcelona": "Barcelona, España",
+  "shirazUni": "Universidad de Ciencias Médicas de Shiraz",
+  "medInformatics": "Informática Médica",
+  "ust": "Universidad de Ciencia y Tecnología",
+  "softEng": "Ingeniería de Software",
+  "iran": "Irán",
+  "downloadCV": "Descargar CV",
+  "skillsSection": {
+    "title": "Habilidades",
+    "subtitle": "Mi nivel técnico",
+    "frontend": {
+      "title": "Desarrolladora Frontend"
+    },
+    "backend": {
+      "title": "Desarrolladora Backend"
+    },
+    "methodologies": {
+      "title": "Metodologías"
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Aquí tienes algunos de mis proyectos recientes que muestran mis habilidades en la creación de aplicaciones web modernas.",
+    "migraBot": {
+      "title": "MigraBot",
+      "description": "Chatbot con IA para MigraCode Barcelona utilizando LLM y RAG con React para ofrecer respuestas instantáneas y con contexto sobre el bootcamp de programación."
+    },
+    "coursesPlatform": {
+      "title": "Plataforma de Cursos de Programación",
+      "description": "Creé una aplicación web full-stack para la venta de cursos de programación utilizando React y Tailwind CSS. Incluye paneles de administración y usuario para la gestión de cursos, autenticación y pagos, con navegación fluida, listado de cursos y funciones de administración."
+    },
+    "setCoffee": {
+      "title": "SetCoffee – Tienda Online de Café",
+      "description": "Desarrollé un sitio de comercio electrónico para vender café con Next.js y paneles de administración y usuario. Incluye listado de productos, carrito de compras y gestión de pedidos. Actualmente trabajando en mejorar la capacidad de respuesta y escalabilidad de la interfaz."
+    },
+    "viewMore": "Ver más proyectos en GitHub"
+  },
+
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "Ponte en contacto",
+    "phone": { "title": "Llámame" },
+    "email": { "title": "Correo electrónico" },
+    "location": { "title": "Ubicación" },
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "required": "El nombre es obligatorio",
+        "min": "Al menos 3 caracteres",
+        "max": "Máximo 100 caracteres"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "required": "El correo es obligatorio",
+        "invalid": "Correo electrónico inválido"
+      },
+      "subject": {
+        "label": "Asunto",
+        "required": "El asunto es obligatorio",
+        "min": "Al menos 5 caracteres",
+        "max": "Máximo 100 caracteres"
+      },
+      "message": {
+        "label": "Mensaje",
+        "required": "El mensaje es obligatorio",
+        "min": "Al menos 10 caracteres",
+        "max": "Máximo 500 caracteres"
+      },
+      "submit": "Enviar Mensaje"
+    },
+    "alert": {
+      "title": "¡Mensaje enviado!",
+      "text": "Gracias por contactarme. Te responderé pronto.",
+      "button": "Aceptar"
+    }
+  },
+  "footer": {
+    "crafted": "Creado con ❤️ y tecnologías web modernas",
+    "links": {
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "contact": "Contáctame"
+    }
+  }
+}

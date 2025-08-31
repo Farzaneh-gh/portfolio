@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-
+import { useTranslation } from "react-i18next";
 
 export default function ContactSection() {
+    const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -29,9 +30,11 @@ export default function ContactSection() {
       {/* Title + Subtitle */}
       <div className="mb-12 text-center md:mb-20">
         <h2 className="mb-2 text-2xl font-bold text-zinc-800 md:mb-4 md:text-4xl">
-          Contact Me
+          {t("contact.title")}
         </h2>
-        <p className="text-xs text-zinc-600 md:text-base">Get in touch</p>
+        <p className="text-xs text-zinc-600 md:text-base">
+          {t("contact.subtitle")}
+        </p>
       </div>
 
       {/* Grid Container */}
@@ -41,7 +44,9 @@ export default function ContactSection() {
           <div className="flex items-start gap-3">
             <i className="uil uil-phone text-2xl text-indigo-600"></i>
             <div>
-              <h3 className="text-lg font-medium text-gray-900">Call Me</h3>
+              <h3 className="text-lg font-medium text-gray-900">
+                {t("contact.phone.title")}
+              </h3>
               <p className="text-xs text-gray-500">+34 644 701 638</p>
             </div>
           </div>
@@ -49,7 +54,9 @@ export default function ContactSection() {
           <div className="flex items-start gap-3">
             <i className="uil uil-envelope text-2xl text-indigo-600"></i>
             <div>
-              <h3 className="text-lg font-medium text-gray-900">Email</h3>
+              <h3 className="text-lg font-medium text-gray-900">
+                {t("contact.email.title")}
+              </h3>
               <p className="text-xs text-gray-500">
                 ghasemi.farzaneh89@gmail.com
               </p>
@@ -59,7 +66,9 @@ export default function ContactSection() {
           <div className="flex items-start gap-3">
             <i className="uil uil-map-marker text-2xl text-indigo-600"></i>
             <div>
-              <h3 className="text-lg font-medium text-gray-900">Location</h3>
+              <h3 className="text-lg font-medium text-gray-900">
+                {t("contact.location.title")}
+              </h3>
               <p className="text-xs text-gray-500">Spain</p>
             </div>
           </div>
@@ -73,34 +82,37 @@ export default function ContactSection() {
           {[
             {
               id: "name",
-              label: "Name",
+              label: t("contact.form.name.label"),
               type: "text",
               validation: {
-                required: "Name is required",
-                minLength: { value: 3, message: "At least 3 characters" },
-                maxLength: { value: 100, message: "Max 100 characters" },
+                required: t("contact.form.name.required"),
+                minLength: { value: 3, message: t("contact.form.name.min") },
+                maxLength: { value: 100, message: t("contact.form.name.max") },
               },
             },
             {
               id: "email",
-              label: "Email",
+              label: t("contact.form.email.label"),
               type: "email",
               validation: {
-                required: "Email is required",
+                required: t("contact.form.email.required"),
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: "Invalid email address",
+                  message: t("contact.form.email.invalid"),
                 },
               },
             },
             {
               id: "subject",
-              label: "Subject",
+              label: t("contact.form.subject.label"),
               type: "text",
               validation: {
-                required: "Subject is required",
-                minLength: { value: 5, message: "At least 5 characters" },
-                maxLength: { value: 100, message: "Max 100 characters" },
+                required: t("contact.form.subject.required"),
+                minLength: { value: 5, message: t("contact.form.subject.min") },
+                maxLength: {
+                  value: 100,
+                  message: t("contact.form.subject.max"),
+                },
               },
             },
           ].map(({ id, label, type, validation }) => (
@@ -113,7 +125,7 @@ export default function ContactSection() {
                   {label}
                 </label>
                 <input
-                key={id}
+                  key={id}
                   type={type}
                   id={id}
                   {...register(id, validation)}
@@ -122,7 +134,7 @@ export default function ContactSection() {
               </div>
               {/* Show validation error */}
               {errors[id] && (
-                <span className="text-xs text-red-500" >
+                <span className="text-xs text-red-500">
                   {errors[id].message}
                 </span>
               )}
@@ -134,7 +146,7 @@ export default function ContactSection() {
               htmlFor="message"
               className="block text-sm font-medium text-gray-700"
             >
-              Message
+              {t("contact.form.message.label")}
             </label>
             <textarea
               id="message"
@@ -164,7 +176,7 @@ export default function ContactSection() {
                        focus:outline-none focus:ring-2 focus:ring-purple-400 
                        focus:ring-offset-2 sm:text-base"
           >
-            Send Message
+            {t("contact.form.submit")}
             <i className="uil uil-message"></i>
           </button>
         </form>
