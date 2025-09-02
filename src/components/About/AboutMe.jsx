@@ -102,7 +102,7 @@ function AboutMe() {
         >
           <a
             download="Farzaneh-Ghasemi-CV.pdf"
-            /*   href="/assets/pdf/CV-Farzaneh-Ghasemii.pdf" */
+            href="/assets/pdf/CVghasemi.pdf"
             className="flex gap-3 items-center"
           >
             <span className="text-sm md:text-base">{t("downloadCV")}</span>
