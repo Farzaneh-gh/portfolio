@@ -45,12 +45,10 @@ function Skills() {
       id="skills"
       data-aos="fade-up"
     >
-      <h2 className="text-center text-4xl text-zinc-800 font-medium mb-3">
+      <h2 className="section-title gradient-text">
         {t("skillsSection.title")}
       </h2>
-      <span className="text-center mb-20 block text-base text-zinc-600">
-        {t("skillsSection.subtitle")}
-      </span>
+      <p className="section-subtitle">{t("skillsSection.subtitle")}</p>
 
       <div className="max-w-7xl lg:px-30 mx-auto px-6 md:px-1 grid grid-cols-1 xs:grid-cols-2 gap-6 lg:gap-12 ">
         {skillGroups.map((group) => (

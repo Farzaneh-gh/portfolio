@@ -5,111 +5,143 @@ import Frazaneh2 from "../../assets/images/Frazaneh2.jpg";
 function AboutMe() {
   const { t } = useTranslation();
 
+  const educationCards = [
+    {
+      institution: t("migraCode"),
+      degree: t("certificateIn"),
+      field: t("webDev"),
+      location: t("barcelona"),
+      gradient: "from-blue-500 to-purple-600",
+      icon: "💻"
+    },
+    {
+      institution: t("shirazUni"),
+      degree: "M.Sc.",
+      field: t("medInformatics"),
+      location: t("iran"),
+      gradient: "from-purple-500 to-pink-600",
+      icon: "🎓"
+    },
+    {
+      institution: t("ust"),
+      degree: "B.Sc.",
+      field: t("softEng"),
+      location: t("iran"),
+      gradient: "from-pink-500 to-red-600",
+      icon: "🎓"
+    }
+  ];
+
   return (
     <section
-      className="pt-8 pb-16 md:pt-25 md:pb-8"
+      className="section bg-white relative overflow-hidden"
       id="about"
       data-aos="fade-up"
     >
-      <h2 className="text-center text-4xl text-zinc-800 font-medium mb-3">
-        {t("aboutTitle")}
-      </h2>
-      <span className="text-center mb-16 block text-base text-zinc-600">
-        {t("aboutSubtitle")}
-      </span>
+      {/* Background decoration */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 right-10 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-2000"></div>
+      </div>
 
-      <div className="max-w-7xl flex flex-col gap-y-5 mx-auto md:grid md:grid-cols-2 md:grid-rows-[auto auto]  gap-5 lg:gap-8 px-6 lg:px-10 items-start">
-        {/* Image */}
-        <img
-          src={Frazaneh2}
-          alt={t("aboutImageAlt")}
-          className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] h-auto mx-auto rounded-2xl row-span-1 lg:row-span-2"
-        />
-
-        {/* Introduction Text */}
-        <div>
-          <p className="text-sm md:text-base lg:text-lg  text-center lg:text-justify text-zinc-600 mb-3 lg:mb-16 leading-normal tracking-tight">
-            {t("aboutText")}
-          </p>
-          <h2 className="text-2xl font-semibold text-zinc-900 pl-6 hidden lg:block ">
-            {t("educationTitle")}
-          </h2>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="section-title gradient-text">{t("aboutTitle")}</h2>
+          <p className="section-subtitle">{t("aboutSubtitle")}</p>
         </div>
 
-        {/* Education / Info Cards */}
-        <h2 className="text-xl font-semibold text-zinc-900 pl-6 lg:hidden self-center">
-          {t("educationTitle")}
-        </h2>
-        <div
-          data-aos="flip-left"
-          className="flex flex-col md:flex-row gap-4 w-full items-center md:items-stretch md:col-span-2 lg:col-span-1 justify-between "
-        >
-          <div className="py-5 px-5 rounded-xl w-[90%] shadow-md bg-[#9a8cdc] text-white text-center flex flex-col justify-between items-center">
-            <span className="block  font-semibold text-zinc-900 line-clamp-2 text-xs md:text-base ">
-              {t("migraCode")}
-            </span>
-
-            <span className="block text-sm">{t("certificateIn")}</span>
-            <span className="font-semibold  block text-sm">{t("webDev")}</span>
-            <span className="block text-xs mt-1">{t("barcelona")}</span>
-          </div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Side - Image */}
           <div
-            data-aos="flip-left"
-            className="py-5 px-5 rounded-xl w-[90%] shadow-md bg-[#9a8cdc] text-white text-center flex flex-col justify-between items-center"
+            className="flex justify-center lg:justify-start"
+            data-aos="fade-right"
           >
-            <span className="block  font-semibold text-zinc-900 line-clamp-2 text-xs md:text-base ">
-              {t("shirazUni")}
-            </span>
-            <span className="block text-sm">
-              M.Sc.
-              <span className="font-semibold block">{t("medInformatics")}</span>
-            </span>
-            <span className="block text-xs mt-1">{t("iran")}</span>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl blur opacity-20 animate-pulse"></div>
+              <img
+                src={Frazaneh2}
+                alt={t("aboutImageAlt")}
+                className="relative w-80 sm:w-96 h-auto rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500"
+              />
+
+              {/* Floating elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded-full animate-pulse"></div>
+            </div>
           </div>
 
-          <div
-            data-aos="flip-left"
-            className="py-5 px-5 rounded-xl w-[90%] shadow-md  bg-gradient-to-r from-[#b7aef0] to-[#7f6cc9] text-white text-center flex flex-col justify-between items-center"
-          >
-            <span className="block font-semibold text-zinc-900 text-xs md:text-base ">
-              {t("ust")}
-            </span>
-            <span className="block text-sm">
-              B.Sc.
-              <span className="font-semibold block">{t("softEng")}</span>
-            </span>
-            <span className="block text-xs mt-1">{t("iran")}</span>
-          </div>
-        </div>
+          {/* Right Side - Content */}
+          <div className="space-y-8" data-aos="fade-left">
+            {/* About Text */}
+            <div className="space-y-6">
+              <p className="text-lg text-gray-600 leading-relaxed text-center lg:text-left">
+                {t("aboutText")}
+              </p>
 
-        {/* CV Download Button */}
-        <div
-          className="
-    inline-flex items-center gap-2 
-    rounded-lg font-semibold shadow-md 
-    transition-all duration-300
-    focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2
-    bg-gradient-to-r from-blue-700 to-blue-500
-    text-white 
-    hover:from-[#a699e8] hover:to-[#6d5abf]
-    dark:from-[#8d7cd8] dark:to-[#5b47a9]
-    
- 
-    px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base mx-auto
-  "
-          aria-label="download CV"
-        >
-          <a
-            download="Farzaneh-Ghasemi-CV.pdf"
-            href="/assets/pdf/CVghasemi.pdf"
-            className="flex gap-3 items-center"
-          >
-            <span className="text-sm md:text-base">{t("downloadCV")}</span>
-            <svg className="w-6 h-6 text-white font-bold">
-              <use href="#icon-download"></use>
-            </svg>
-          </a>
+              {/* Download CV Button */}
+              <div className="flex justify-center lg:justify-start">
+                <a
+                  href="/assets/pdf/CVghasemi.pdf"
+                  download="Farzaneh_Ghasemi_CV.pdf"
+                  className="btn-primary px-6 py-3 hover-lift"
+                >
+                  <svg className="w-5 h-5">
+                    <use href="#icon-download" />
+                  </svg>
+                  <span>{t("downloadCV")}</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Education Section */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-gray-800 text-center lg:text-left pb-10">
+                {t("educationTitle")}
+              </h3>
+
+              <div className="grid grid-cols-1  gap-4">
+                {educationCards.map((edu, index) => (
+                  <div
+                    key={index}
+                    className="card hover-lift group"
+                    data-aos="flip-up"
+                    data-aos-delay={`${index * 100}`}
+                  >
+                    <div className="p-2 md:p-6 flex items-center justify-center flex-col lg:flex-row space-x-4 space-y-4">
+                      {/* Icon */}
+                      <div
+                        className={`w-16 h-16 bg-gradient-to-br ${edu.gradient} rounded-xl flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        {edu.icon}
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 space-y-1 flex flex-col items-center justify-center">
+                        <h4 className="text-center font-bold text-gray-800 text-sm md:text-base group-hover:text-purple-600 transition-colors duration-300">
+                          {edu.institution}
+                        </h4>
+                        <div className="text-gray-600 text-center">
+                          <span className="font-medium text-sm ">
+                            {edu.degree}
+                          </span>
+                          {edu.field && (
+                            <>
+                              <span className="text-gray-400 mx-2">•</span>
+                              <span className="font-medium text-sm ">
+                                {edu.field}
+                              </span>
+                            </>
+                          )}
+                        </div>
+                        <p className="text-sm text-gray-500">{edu.location}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import swal from "sweetalert";
 import { useTranslation } from "react-i18next";
 
 export default function ContactSection() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -12,35 +12,31 @@ export default function ContactSection() {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-     swal({
-       title: "Message Sent!",
-       text: "Thank you for contacting me. I will get back to you soon.",
-       icon: "success",
-       button: "OK",
-     });
+    swal({
+      title: "Message Sent!",
+      text: "Thank you for contacting me. I will get back to you soon.",
+      icon: "success",
+      button: "OK",
+    });
     reset();
   };
 
   return (
     <section
       id="contact"
-      className="overflow-hidden px-4 py-10 lg:px-0"
+      className="overflow-hidden container px-4 py-10 lg:px-0 mx-auto"
       data-aos="fade-up"
     >
       {/* Title + Subtitle */}
       <div className="mb-12 text-center md:mb-20">
-        <h2 className="mb-2 text-2xl font-bold text-zinc-800 md:mb-4 md:text-4xl">
-          {t("contact.title")}
-        </h2>
-        <p className="text-xs text-zinc-600 md:text-base">
-          {t("contact.subtitle")}
-        </p>
+        <h2 className="section-title gradient-text">{t("contact.title")}</h2>
+        <p className="section-subtitle">{t("contact.subtitle")}</p>
       </div>
 
       {/* Grid Container */}
-      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-12 px-1 xs:grid-cols-12">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-2">
         {/* Contact Information */}
-        <div className="space-y-8 xs:col-span-6 md:col-span-4">
+        <div className="space-y-8">
           <div className="flex items-start gap-3">
             <i className="uil uil-phone text-2xl text-indigo-600"></i>
             <div>
@@ -75,10 +71,7 @@ export default function ContactSection() {
         </div>
 
         {/* Contact Form */}
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="grid gap-3 xs:col-span-6 md:col-span-8"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="grid gap-3">
           {[
             {
               id: "name",

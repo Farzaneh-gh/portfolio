@@ -2,146 +2,196 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 function Projects() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      title: t("projects.migraBot.title"),
+      description: t("projects.migraBot.description"),
+      icon: "🤖",
+      gradient: "from-blue-500 to-purple-600",
+      colorScheme: "blue",
+      technologies: [
+        "React",
+        "Tailwind CSS",
+        "Express.js",
+        "LLM",
+        "RAG",
+        "PostgreSQL",
+        "MongoDB",
+      ],
+
+      codeUrl: "https://github.com/Farzaneh-gh/chatbot-frontend",
+    },
+    {
+      title: t("projects.coursesPlatform.title"),
+      description: t("projects.coursesPlatform.description"),
+      icon: "📚",
+      gradient: "from-green-500 to-blue-600",
+      colorScheme: "green",
+      technologies: [
+        "React",
+        "Tailwind CSS",
+        "MongoDB",
+        "React Router DOM",
+        "typewriter-effect",
+        "Vite",
+        "Swiper",
+        "Plyr",
+      ],
+      demoUrl: "https://sabzlearns.vercel.app",
+      codeUrl: "https://github.com/Farzaneh-gh/sabzlearn-english-frontend",
+    },
+    {
+      title: t("projects.setCoffee.title"),
+      description: t("projects.setCoffee.description"),
+      icon: "☕",
+      gradient: "from-orange-500 to-red-600",
+      colorScheme: "orange",
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive Design",
+        "Tailwind CSS",
+      ],
+
+      codeUrl: "https://github.com/Farzaneh-gh/next-SetCoffee",
+    },
+  ];
+
+  const getColorClasses = (colorScheme) => {
+    const colors = {
+      blue: {
+        bg: "bg-blue-100",
+        text: "text-blue-700",
+        border: "border-blue-200",
+        hover: "hover:bg-blue-200",
+        titleHover: "group-hover:text-blue-600",
+      },
+      green: {
+        bg: "bg-green-100",
+        text: "text-green-700",
+        border: "border-green-200",
+        hover: "hover:bg-green-200",
+        titleHover: "group-hover:text-green-600",
+      },
+      orange: {
+        bg: "bg-orange-100",
+        text: "text-orange-700",
+        border: "border-orange-200",
+        hover: "hover:bg-orange-200",
+        titleHover: "group-hover:text-orange-600",
+      },
+    };
+    return colors[colorScheme] || colors.blue;
+  };
+
   return (
     <section
       id="projects"
-      className="relative pt-20 overflow-hidden mb-20"
+      className="section relative overflow-hidden bg-gradient-to-br from-gray-50 to-white"
       data-aos="fade-up"
     >
-      <div className="max-w-6xl mx-auto px-6 ">
-        <div className="">
-          <div className=" text-center space-y-4 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-800">
-              {t("projects.title")}
-            </h2>
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center space-y-4 mb-20">
+          <h2 className="section-title gradient-text">{t("projects.title")}</h2>
+          <p className="section-subtitle">{t("projects.subtitle")}</p>
+        </div>
 
-            <p className="  max-w-2xl mx-auto text-zinc-700">
-              {t("projects.subtitle")}
-            </p>
-          </div>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {projects.map((project, index) => {
+            const colors = getColorClasses(project.colorScheme);
 
-          <div className="grid grid-cols-1 xs:grid-cols-2 gap-8">
-            <div className="relative h-full group cursor-pointer shadow-lg rounded-2xl overflow-hidden bg-white">
-              <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-[#bab3eb] to-[#7d68d3]"></div>
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:4px_4px]"></div>
-              <div className="relative p-6 space-y-4 h-full flex flex-col rounded-2xl">
-                <h3 className="text-xl font-semibold text-zinc-900 text-center relative inline-block">
-                  {t("projects.migraBot.title")}
-                </h3>
-                <p className="text-zinc-800 flex-grow text-sm md:text-base text-center">
-                  {t("projects.migraBot.description")}
-                </p>
-                <div className="flex flex-wrap gap-2 pb-4 justify-center items-center">
-                  {[
-                    "React",
-                    "Tailwind CSS",
-                    "Express.js",
-                    "LLM",
-                    "RAG",
-                    "PostgreSQL",
-                    "MongoDB",
-                  ].map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 text-xs rounded-full  border border-gray-300 bg-zinc-50 text-zinc-700"
+            return (
+              <div
+                key={index}
+                className="card hover-lift group flex flex-col justify-between"
+                data-aos="fade-up"
+                data-aos-delay={`${(index + 1) * 100}`}
+              >
+                {/* Project Image/Icon */}
+                <div className="relative overflow-hidden rounded-t-xl">
+                  <div
+                    className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}
+                  >
+                    <div className="text-white text-6xl opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                      {project.icon}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-6 space-y-4 flex-1 flex flex-col   ">
+                  <div className="flex-grow">
+                    <h3
+                      className={`text-xl font-bold text-gray-900 ${colors.titleHover} transition-colors duration-300 text-center`}
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      {project.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm leading-relaxed mt-4 text-center">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className={`px-3 py-1 text-xs rounded-full ${colors.bg} ${colors.text} ${colors.border} border ${colors.hover} transition-colors duration-200`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex  gap-3 pt-4 ">
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        className="btn-primary flex-1 flex items-center justify-center  text-sm py-2 text-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span>Live Demo</span>
+                      </a>
+                    )}
+                    <a
+                      href={project.codeUrl}
+                      className="btn-secondary flex justify-center flex-1 text-sm py-2 text-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>Code</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            );
+          })}
+        </div>
 
-            {/* Project 2 */}
-
-            <div className="relative h-full group cursor-pointer shadow-lg rounded-2xl overflow-hidden bg-white">
-              <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-[#bab3eb] to-[#7d68d3]"></div>
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:4px_4px]"></div>
-              <div className="relative p-6 space-y-4 h-full flex flex-col rounded-2xl">
-                <h3 className="text-xl font-semibold text-zinc-900 text-center relative inline-block">
-                  {t("projects.coursesPlatform.title")}
-                </h3>
-                <p className="text-zinc-800 flex-grow text-sm md:text-base text-center">
-                  {t("projects.coursesPlatform.description")}
-                </p>
-                <div className="flex flex-wrap gap-2 pb-4 justify-center items-center">
-                  {[
-                    "React",
-                    "Tailwind CSS",
-                    "MongoDB",
-                    "React Router DOM",
-                    "typewriter-effect",
-                    "Vite",
-                    "Swiper",
-                    "Plyr",
-                  ].map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 text-xs rounded-full  border border-gray-300 bg-zinc-50 text-zinc-700"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-
-            <div className="relative h-full group cursor-pointer shadow-lg rounded-2xl overflow-hidden bg-white">
-              <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-[#bab3eb] to-[#7d68d3]"></div>
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:4px_4px]"></div>
-              <div className="relative p-6 space-y-4 h-full flex flex-col rounded-2xl">
-                <h3 className="text-xl font-semibold text-zinc-900 text-center relative inline-block">
-                  {t("projects.setCoffee.title")}
-                </h3>
-                <p className="text-zinc-800 flex-grow text-sm md:text-base text-center">
-                  {t("projects.setCoffee.description")}
-                </p>
-                <div className="flex flex-wrap gap-2 pb-4 justify-center items-center">
-                  {[
-                    "Next.js",
-                    "React",
-                    "Tailwind CSS",
-                    "CKEditor 5",
-                    "AOS",
-                    "Leaflet",
-                    "React-Leaflet",
-                    "Recharts",
-                    "Swiper",
-                    "Mongoose",
-                    "Bcrypt.js",
-                    "JSON Web Token",
-                    "Twilio",
-                  ].map((tech, index) => (
-                    <span
-                      data-aos-delay={index * 100}
-                      key={index}
-                      className="px-4 py-2 text-xs rounded-full border border-gray-300 bg-zinc-50 text-zinc-700"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* View More Button */}
-          {/* <div className="transition-all duration-500 ease-out  translate-y-8 text-center">
-            <a
-              href="https://github.com/ali-r-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary-light/10 dark:bg-primary-dark/10 hover:bg-primary-light/20 dark:hover:bg-primary-dark/20 text-primary-light dark:text-primary-dark rounded-xl transition-colors group"
-            >
-              <span className="font-medium">View More Projects on GitHub</span>
-              <span className=" group-hover:opacity-100 transition-opacity duration-300 transform translate-x-2 group-hover:translate-x-0">
-                →
-              </span>
-            </a>
-          </div> */}
+        {/* View More Section */}
+        <div className="text-center" data-aos="fade-up" data-aos-delay="400">
+          <a
+            href="https://github.com/Farzaneh-gh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group"
+          >
+            <svg className="w-6 h-6 group-hover:scale-110 transition-transform duration-300">
+              <use href="#icon-git" />
+            </svg>
+            <span className="font-semibold">View More Projects on GitHub</span>
+            <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300">
+              <use href="#icon-arrow" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
